@@ -1,0 +1,21 @@
+O sistema representa uma porta automática com realimentação e mecanismo de reinicialização, projetada para manter uma condição segura diante de obstáculos, objetos no meio da passagem, ferrugem ou erros de abertura.
+
+-Sensores-
+
+Os sensores monitoram continuamente a região da porta, verificando se existe um obstáculo ou alguma condição que possa tornar o movimento da porta inseguro.
+
+-Porta automática (lógica)-
+
+A lógica de controle recebe as informações dos sensores e determina se o motor pode continuar operando, quando uma condição anormal é detectada, o sistema deve interromper ou impedir o movimento perigoso da porta.
+
+-Motor-
+
+O motor realiza a abertura ou o fechamento da porta conforme o comando da lógica, caso ocorra um erro de abertura ou seja detectada uma condição insegura, o motor não deve continuar forçando o mecanismo.
+
+-Erro de abertura e realimentação-
+
+Se ocorrer um erro de abertura o sinal retorna pelo caminho de realimentação até o mecanismo de reinicialização, permitindo que a falha seja identificada e que o sistema entre em uma condição que evita a continuidade de uma operação potencialmente perigosa.
+
+-Mecanismo de reinicialização-
+
+Após uma falha, o mecanismo de reinicialização deve colocar o sistema em um estado seguro, a porta só deve voltar a operar normalmente depois que a causa da falha for eliminada e as condições de segurança forem novamente confirmadas.
