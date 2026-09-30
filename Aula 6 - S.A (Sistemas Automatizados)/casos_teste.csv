@@ -1,0 +1,11 @@
+Caso;Etapa inicial;Tempo aplicado (s);Próxima etapa;Resultado esperado;;;
+1;E0;7.9;E0;permanece vermelho;;;
+2;E0;8.0;E1;verde ativa;;;
+3;E1;10.0;E2;amarelo ativa;;;
+4;E2;3.0;E0;vermelho retorna;;;
+5;E0;8.1;E1;transição já deve ter ocorrido;;;
+6;E1;10.1;E2;transição já deve ter ocorrido;;;
+7;E2;3.1;E0;retorno já deve ter ocorrido;;;
+8;E0;0.0;E0;início inequívoco: vermelho ativo;;;
+9;E0;8.0;E1;limite exato: verde ativa;;;
+10;E2;3.0;E0;limite exato: vermelho retorna;;;
