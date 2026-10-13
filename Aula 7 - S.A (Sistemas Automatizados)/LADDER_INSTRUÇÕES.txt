@@ -1,0 +1,35 @@
+LÓGICA LADDER
+
+Rung 1 – Habilitação do Timer
+
+------------------------------------------------
+|----[ START ]----[ STOP_OK ]----[ EMG_OK ]----( TON  T1 )----|
+                                                PT = 3000
+
+Rung 2 – Saída do Motor
+------------------------------------------------
+|----[ T1.Q ]--------------------------------( MOTOR_DELAY )--|
+
+
+Rung 3 – Reset
+------------------------------------------------
+|----[/STOP_OK]----+----( T1.RESET )----|
+|                  |
+|----[/EMG_OK ]----+
+
+
+COMPORTAMENTO ESPERADO
+------------------------------------------------
+- START = 1 + STOP_OK = 1 + EMG_OK = 1  →  timer começa a contar
+- Após 3 s  →  T1.Q = 1  →  MOTOR_DELAY = 1 (ligado)
+- Qualquer queda de STOP_OK ou EMG_OK  →  ET zera + saída desliga
+- Liberar a falha sem novo START  →  saída continua 0
+
+
+TESTES RÁPIDOS
+-----------------------------------------------
+T01  START por 2s → saída continua 0
+T02  START por 3s ou mais  → saída liga
+T03  Tirar STOP_OK no meio → timer zera + saída 0
+T04  Tirar EMG_OK com saída ligada → saída 0
+T05  Voltar segurança sem START → saída continua 0

@@ -1,0 +1,6 @@
+﻿ID;Ação;Esperado;Obtido;Situação;Observação
+T01;START por 2 s;Q=0 e MOTOR_DELAY=0;;;"ET sobe até ~2s e para; saída permanece 0"
+T02;START por ≥ 3 s;Q=1 e MOTOR_DELAY=1;;;Após 3s T1.Q=1 e saída liga
+T03;STOP_OK=0 durante a contagem (ET);ET zera e saída=0;;;Timer reseta imediatamente ao tirar STOP_OK
+T04;EMG_OK=0 com saída ligada;saída=0;;;"Desliga na hora; ET também zera"
+T05;Liberar falha (STOP_OK ou EMG_OK=1) sem START;saída permanece 0;;;"Não liga sozinho; precisa de novo START"
