@@ -1,0 +1,1588 @@
+{
+ "tema": "01-semaforo",
+ "verificacaoUtc": "2026-10-12T18:20:42Z",
+ "execucaoNativaUtc": "2026-10-12T05:13:53.955Z",
+ "bundle": "index-52YZHsrG.js",
+ "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+ "tick_ms": 66,
+ "sha256": {
+  "programas": {
+   "semaforo.json": "38253abb769e809c0d20b724a2e9a65398befadf7ebac1b687de231aeb511d9d"
+  },
+  "casos.json": "2ba20438caf3f5065d489a8ef231e1af6c8dec66c6d0ed2e82aa5554e8119461",
+  "mutantes": {
+   "mut-s1-amarelo-duas-bobinas.json": "2c869675ea455faae7eeadf6d27ff9d4e320d29b870d9b1c770368ce834a6744",
+   "mut-s2-botao-sem-memoria.json": "409748374b6e546c112f9b403fcb66cbcffe1e30910b593118b78ecca946a503",
+   "mut-s3-fila-pela-borda-do-laco.json": "40513b2b8bacd3122498d01a1b7fd47384e49b2dd236ec681bcd052053bea819",
+   "mut-s4-vermelho-sem-manut.json": "d0e3d3b81ff55c5398a402b3569524d387abe25e2bf70fdbdc32de3ac5c2a065",
+   "mut-s5-sem-verde-minimo.json": "88d86d8bf8aae3b9c5b8fb313134fdfcf2c869494a03c8f21a28e529763eb0c7",
+   "mut-s6-sem-verde-maximo.json": "283e6f16fc4fc8e09cd6847fcf889d2e6b946c6faa3cda90cb6bbc01120bd8ec"
+  },
+  "ferramentas": {
+   "ladder.py": "4197de18ef6ad2d54725e96962dc7bd1d7728f8e188bd826c77aa65ff20c4a21",
+   "interpreta.py": "8188e5e45ccaaebf4f93237d1a5b0cce15470c0441f8dbc79881c9800dfa5234",
+   "casos_util.py": "e9ae78e21eeff0b0f692f49badfbcd1f86d43224923b8ec7b124df0a582e1b2b",
+   "gera.py": "d0bd17b07d8d61078d1f0337ff916a4dc2a0e3614f2469f584238837c1f26475",
+   "verifica.py": "6a4c5de13a17013211e7f737b05d5d438b4e65bb1f1af95f42ee635f9aa8eb3d",
+   "testa_nativo.mjs": "66b3bc511cbb7d0edc7f78d210a5d13f1f49a8f1a9579ecc8712142cda965669",
+   "cdp.mjs": "d1a4140605173f5365050b4cda04b4148f93023d9892cb9cecff37f2f45b8ebb",
+   "captura.mjs": "e43a96d1245cedd072bf5de613502820217f00fb927763bfd46d351719f1fc52",
+   "temas/01-semaforo/tema.py": "b5b65aa8b546005c78f8e1f5cd1d6ca4095d114837fe81a6ea9f083301171ba5"
+  }
+ },
+ "resumo": {
+  "S": {
+   "titulo": "semáforo de cruzamento com fase de pedestres",
+   "publicado": true,
+   "sequencias": 12,
+   "casos": 90,
+   "passam": 90,
+   "varreduras": 4669
+  }
+ },
+ "interpretador": {
+  "S": {
+   "registros_de_varredura": 32683,
+   "identicos": 32683
+  }
+ },
+ "invariantes": {
+  "S": {
+   "varreduras": 4668,
+   "itens": [
+    {
+     "id": "INV-S1",
+     "descricao": "fora da manutenção, A (verde ou amarelo) e B (verde ou amarelo) nunca abertos juntos",
+     "violacoes": 0
+    },
+    {
+     "id": "INV-S2",
+     "descricao": "pedestre verde só com A e B vermelhos",
+     "violacoes": 0
+    },
+    {
+     "id": "INV-S3",
+     "descricao": "fora da manutenção, exatamente uma etapa ativa; em manutenção, nenhuma",
+     "violacoes": 0
+    },
+    {
+     "id": "INV-S4",
+     "descricao": "fora da manutenção, cada grupo veicular com exatamente uma lâmpada; pedestre nunca verde e vermelho juntos",
+     "violacoes": 0
+    },
+    {
+     "id": "INV-S5",
+     "descricao": "um verde nunca vai direto a vermelho: depois de verde, a mesma via mostra verde ou amarelo",
+     "violacoes": 0
+    },
+    {
+     "id": "INV-S6",
+     "descricao": "um verde só começa com as outras correntes fechadas na varredura anterior",
+     "violacoes": 0
+    },
+    {
+     "id": "INV-S7",
+     "descricao": "em manutenção: nenhum verde nem vermelho, pedestre apagado, os dois amarelos iguais a LUZ_PISCA",
+     "violacoes": 0
+    },
+    {
+     "id": "INV-S8",
+     "descricao": "PED_AGUARDE = SOL_PED e DEM_B = (C_FILA.CV ≥ 1)",
+     "violacoes": 0
+    }
+   ]
+  }
+ },
+ "mutantes": {
+  "MUT-S1": {
+   "programa": "S",
+   "descricao": "A_AMARELO escrito em duas bobinas: a da manutenção apaga a da etapa E2",
+   "deve_reprovar": [
+    "P03"
+   ],
+   "so_estes": false,
+   "reprovou_em": 12,
+   "casos_reprovados": [
+    "F08",
+    "F09",
+    "K08",
+    "L08",
+    "P03",
+    "P04",
+    "Q10",
+    "T02",
+    "T03",
+    "U04",
+    "Z02",
+    "Z03"
+   ],
+   "invariantes_violadas": [
+    "INV-S4",
+    "INV-S5"
+   ],
+   "resultado": "REPROVADO COMO ESPERADO"
+  },
+  "MUT-S2": {
+   "programa": "S",
+   "descricao": "transições usam o botão direto, sem a memória do pedido",
+   "deve_reprovar": [
+    "P03"
+   ],
+   "so_estes": false,
+   "reprovou_em": 21,
+   "casos_reprovados": [
+    "B07",
+    "B08",
+    "B09",
+    "K01",
+    "K02",
+    "K03",
+    "K04",
+    "K05",
+    "K08",
+    "P03",
+    "P04",
+    "P05",
+    "P06",
+    "P07",
+    "P08",
+    "P09",
+    "T05",
+    "Z01",
+    "Z02",
+    "Z03",
+    "Z04"
+   ],
+   "invariantes_violadas": [],
+   "resultado": "REPROVADO COMO ESPERADO"
+  },
+  "MUT-S3": {
+   "programa": "S",
+   "descricao": "fila contada só pela borda do laço: veículo parado no fim do verde B se perde",
+   "deve_reprovar": [
+    "L04"
+   ],
+   "so_estes": false,
+   "reprovou_em": 5,
+   "casos_reprovados": [
+    "L04",
+    "L05",
+    "L06",
+    "L07",
+    "L08"
+   ],
+   "invariantes_violadas": [],
+   "resultado": "REPROVADO COMO ESPERADO"
+  },
+  "MUT-S4": {
+   "programa": "S",
+   "descricao": "vermelhos sem ¬MANUT: vermelho aceso junto com o amarelo intermitente",
+   "deve_reprovar": [
+    "M01"
+   ],
+   "so_estes": false,
+   "reprovou_em": 4,
+   "casos_reprovados": [
+    "M01",
+    "M02",
+    "M03",
+    "N01"
+   ],
+   "invariantes_violadas": [
+    "INV-S7"
+   ],
+   "resultado": "REPROVADO COMO ESPERADO"
+  },
+  "MUT-S5": {
+   "programa": "S",
+   "descricao": "saída do verde A sem o verde mínimo",
+   "deve_reprovar": [
+    "P01"
+   ],
+   "so_estes": false,
+   "reprovou_em": 56,
+   "casos_reprovados": [
+    "B01",
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B06",
+    "B07",
+    "B08",
+    "F06",
+    "F07",
+    "F08",
+    "F09",
+    "F10",
+    "F11",
+    "F12",
+    "F13",
+    "F14",
+    "F15",
+    "K01",
+    "K02",
+    "K03",
+    "K04",
+    "K05",
+    "K06",
+    "K07",
+    "K08",
+    "L01",
+    "L02",
+    "L03",
+    "L04",
+    "L05",
+    "L07",
+    "L08",
+    "N01",
+    "P01",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "P06",
+    "P07",
+    "P08",
+    "P09",
+    "Q01",
+    "Q02",
+    "Q03",
+    "Q04",
+    "Q05",
+    "Q06",
+    "Q07",
+    "Q08",
+    "Q09",
+    "Z01",
+    "Z02",
+    "Z03",
+    "Z04"
+   ],
+   "invariantes_violadas": [],
+   "resultado": "REPROVADO COMO ESPERADO"
+  },
+  "MUT-S6": {
+   "programa": "S",
+   "descricao": "sem verde máximo: um veículo sozinho em B nunca é atendido",
+   "deve_reprovar": [
+    "U04"
+   ],
+   "so_estes": false,
+   "reprovou_em": 4,
+   "casos_reprovados": [
+    "L08",
+    "U04",
+    "U05",
+    "U06"
+   ],
+   "invariantes_violadas": [],
+   "resultado": "REPROVADO COMO ESPERADO"
+  }
+ },
+ "capturas": {
+  "dateUtc": "2026-10-12T05:15:31.305Z",
+  "metodo": "Programa original importado; estado decisivo alcançado pelos passos de casos.json (mesmo método do executor nativo); relógio de varredura da interface suspenso e simulação ligada só para a captura; janela de 1600×1000 com a área do diagrama posicionada; conferências: estado estável durante a captura, tabela de tags exibida = store, valores decisivos do caso. PNG gravado apenas se as três passam.",
+  "itens": [
+   {
+    "arquivo": "01-partida-vermelho-geral.png",
+    "programa": "S",
+    "caso": "S01",
+    "varreduras_no_passo": null,
+    "sha256": "9707b81cd630eb122843a81e027644dc99d53a32b43f26fca5e626893162593f",
+    "ok": true
+   },
+   {
+    "arquivo": "02-verde-a-pedido.png",
+    "programa": "S",
+    "caso": "P01",
+    "varreduras_no_passo": null,
+    "sha256": "32cd6c94d4461d3ea2bc41574399c994312612f076337a548d761fa76fc47272",
+    "ok": true
+   },
+   {
+    "arquivo": "03-amarelo-a.png",
+    "programa": "S",
+    "caso": "P03",
+    "varreduras_no_passo": null,
+    "sha256": "4902ae3cb8f4bbb024397819c1a0426dff2067e335e1f258965560c4ee2e3335",
+    "ok": true
+   },
+   {
+    "arquivo": "04-vermelho-geral.png",
+    "programa": "S",
+    "caso": "P05",
+    "varreduras_no_passo": null,
+    "sha256": "ae7c442cd4ccf7d84be16ee28012597e91d12123180c6c097c9ce23a00f3e563",
+    "ok": true
+   },
+   {
+    "arquivo": "05-pedestre-verde.png",
+    "programa": "S",
+    "caso": "P07",
+    "varreduras_no_passo": null,
+    "sha256": "5dc02fa62d73f800d4e9336709d5c7f55342908fadb8f92a56f5a59251a7aaa1",
+    "ok": true
+   },
+   {
+    "arquivo": "06-pedestre-piscando.png",
+    "programa": "S",
+    "caso": "P09",
+    "varreduras_no_passo": 20,
+    "sha256": "d88aaec1f53c8aaebb03ffbf78d742d433ce99b13d6843d0030705588fdeabc1",
+    "ok": true
+   },
+   {
+    "arquivo": "07-fila-cheia.png",
+    "programa": "S",
+    "caso": "F06",
+    "varreduras_no_passo": null,
+    "sha256": "f5fbb8434dfc645cfad1c351078e80ce3b7380e1d4d5608de97c7b0eb7d43049",
+    "ok": true
+   },
+   {
+    "arquivo": "08-verde-b.png",
+    "programa": "S",
+    "caso": "F12",
+    "varreduras_no_passo": null,
+    "sha256": "b9aa20f42ec05e13491454ceb2ecada92006a00ce8baa2ab50466506b5bf7c65",
+    "ok": true
+   },
+   {
+    "arquivo": "09-manutencao.png",
+    "programa": "S",
+    "caso": "M01",
+    "varreduras_no_passo": null,
+    "sha256": "79d1e5c4ee5bbd668a26be5f25238c1256a815b334af79d6d826aea7e835001b",
+    "ok": true
+   }
+  ]
+ },
+ "passos": [
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PARTIDA",
+   "id": "S00",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PARTIDA",
+   "id": "S01",
+   "prep": false,
+   "varreduras": 31,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PARTIDA",
+   "id": "S02",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PARTIDA",
+   "id": "S03",
+   "prep": false,
+   "varreduras": 400,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PED",
+   "id": "pPi",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PED",
+   "id": "pPe0",
+   "prep": true,
+   "varreduras": 31,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PED",
+   "id": "pPe1",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PED",
+   "id": "P01",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PED",
+   "id": "P02",
+   "prep": false,
+   "varreduras": 120,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PED",
+   "id": "P03",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PED",
+   "id": "P04",
+   "prep": false,
+   "varreduras": 45,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PED",
+   "id": "P05",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PED",
+   "id": "P06",
+   "prep": false,
+   "varreduras": 15,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PED",
+   "id": "P07",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PED",
+   "id": "P08",
+   "prep": false,
+   "varreduras": 90,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PED",
+   "id": "P09",
+   "prep": false,
+   "varreduras": 61,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PED",
+   "id": "P10",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PED",
+   "id": "P11",
+   "prep": false,
+   "varreduras": 150,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PED-TARDE",
+   "id": "pTi",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PED-TARDE",
+   "id": "pTe0",
+   "prep": true,
+   "varreduras": 31,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PED-TARDE",
+   "id": "pTe1",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PED-TARDE",
+   "id": "T01",
+   "prep": false,
+   "varreduras": 199,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PED-TARDE",
+   "id": "T02",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PED-TARDE",
+   "id": "T03",
+   "prep": false,
+   "varreduras": 45,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PED-TARDE",
+   "id": "T04",
+   "prep": false,
+   "varreduras": 16,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PED-TARDE",
+   "id": "T05",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-FILA",
+   "id": "pFi",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-FILA",
+   "id": "pFe0",
+   "prep": true,
+   "varreduras": 31,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-FILA",
+   "id": "pFe1",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-FILA",
+   "id": "F01",
+   "prep": false,
+   "varreduras": 8,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-FILA",
+   "id": "F02",
+   "prep": false,
+   "varreduras": 5,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-FILA",
+   "id": "F03",
+   "prep": false,
+   "varreduras": 5,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-FILA",
+   "id": "F04",
+   "prep": false,
+   "varreduras": 5,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-FILA",
+   "id": "F05",
+   "prep": false,
+   "varreduras": 5,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-FILA",
+   "id": "F06",
+   "prep": false,
+   "varreduras": 5,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-FILA",
+   "id": "F07",
+   "prep": false,
+   "varreduras": 88,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-FILA",
+   "id": "F08",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-FILA",
+   "id": "F09",
+   "prep": false,
+   "varreduras": 45,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-FILA",
+   "id": "F10",
+   "prep": false,
+   "varreduras": 16,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-FILA",
+   "id": "F11",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-FILA",
+   "id": "F12",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-FILA",
+   "id": "F13",
+   "prep": false,
+   "varreduras": 89,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-FILA",
+   "id": "F14",
+   "prep": false,
+   "varreduras": 46,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-FILA",
+   "id": "F15",
+   "prep": false,
+   "varreduras": 16,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-FILA",
+   "id": "F16",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-UM-VEICULO",
+   "id": "pUi",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-UM-VEICULO",
+   "id": "pUe0",
+   "prep": true,
+   "varreduras": 31,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-UM-VEICULO",
+   "id": "pUe1",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-UM-VEICULO",
+   "id": "U01",
+   "prep": false,
+   "varreduras": 9,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-UM-VEICULO",
+   "id": "U02",
+   "prep": false,
+   "varreduras": 3,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-UM-VEICULO",
+   "id": "U03",
+   "prep": false,
+   "varreduras": 230,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-UM-VEICULO",
+   "id": "U04",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-UM-VEICULO",
+   "id": "U05",
+   "prep": false,
+   "varreduras": 61,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-UM-VEICULO",
+   "id": "U06",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-LACO",
+   "id": "pLi",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-LACO",
+   "id": "pLe0",
+   "prep": true,
+   "varreduras": 31,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-LACO",
+   "id": "pLe1",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-LACO",
+   "id": "pLv0on",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-LACO",
+   "id": "pLv0off",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-LACO",
+   "id": "pLv1on",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-LACO",
+   "id": "pLv1off",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-LACO",
+   "id": "pLv2on",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-LACO",
+   "id": "pLv2off",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-LACO",
+   "id": "pLw",
+   "prep": true,
+   "varreduras": 115,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-LACO",
+   "id": "pLa",
+   "prep": true,
+   "varreduras": 62,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-LACO",
+   "id": "pLb",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-LACO",
+   "id": "L01",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-LACO",
+   "id": "L02",
+   "prep": false,
+   "varreduras": 89,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-LACO",
+   "id": "L03",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-LACO",
+   "id": "L04",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-LACO",
+   "id": "L05",
+   "prep": false,
+   "varreduras": 60,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-LACO",
+   "id": "L06",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-LACO",
+   "id": "L07",
+   "prep": false,
+   "varreduras": 242,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-LACO",
+   "id": "L08",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-AMBOS",
+   "id": "pAi",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-AMBOS",
+   "id": "pAe0",
+   "prep": true,
+   "varreduras": 31,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-AMBOS",
+   "id": "pAe1",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-AMBOS",
+   "id": "pAv0on",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-AMBOS",
+   "id": "pAv0off",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-AMBOS",
+   "id": "pAv1on",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-AMBOS",
+   "id": "pAv1off",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-AMBOS",
+   "id": "pAv2on",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-AMBOS",
+   "id": "pAv2off",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-AMBOS",
+   "id": "B01",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-AMBOS",
+   "id": "B02",
+   "prep": false,
+   "varreduras": 114,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-AMBOS",
+   "id": "B03",
+   "prep": false,
+   "varreduras": 62,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-AMBOS",
+   "id": "B04",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-AMBOS",
+   "id": "B05",
+   "prep": false,
+   "varreduras": 90,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-AMBOS",
+   "id": "B06",
+   "prep": false,
+   "varreduras": 62,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-AMBOS",
+   "id": "B07",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-AMBOS",
+   "id": "B08",
+   "prep": false,
+   "varreduras": 151,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-AMBOS",
+   "id": "B09",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-MANUT",
+   "id": "pMi",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-MANUT",
+   "id": "pMe0",
+   "prep": true,
+   "varreduras": 31,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-MANUT",
+   "id": "pMe1",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-MANUT",
+   "id": "pMv",
+   "prep": true,
+   "varreduras": 19,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-MANUT",
+   "id": "M01",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-MANUT",
+   "id": "M02",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-MANUT",
+   "id": "M03",
+   "prep": false,
+   "varreduras": 38,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-MANUT",
+   "id": "M04",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-MANUT",
+   "id": "M05",
+   "prep": false,
+   "varreduras": 31,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-MANUT",
+   "id": "M06",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-MANUT-PED",
+   "id": "pNi",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-MANUT-PED",
+   "id": "pNe0",
+   "prep": true,
+   "varreduras": 31,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-MANUT-PED",
+   "id": "pNe1",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-MANUT-PED",
+   "id": "pNcb",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-MANUT-PED",
+   "id": "pNcv",
+   "prep": true,
+   "varreduras": 120,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-MANUT-PED",
+   "id": "pNca",
+   "prep": true,
+   "varreduras": 46,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-MANUT-PED",
+   "id": "pNct",
+   "prep": true,
+   "varreduras": 16,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-MANUT-PED",
+   "id": "pNcp",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-MANUT-PED",
+   "id": "pNw",
+   "prep": true,
+   "varreduras": 9,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-MANUT-PED",
+   "id": "N01",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-MANUT-PED",
+   "id": "N02",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-MANUT-PED",
+   "id": "N03",
+   "prep": false,
+   "varreduras": 32,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-BOTAO",
+   "id": "pKi",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-BOTAO",
+   "id": "pKe0",
+   "prep": true,
+   "varreduras": 31,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-BOTAO",
+   "id": "pKe1",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-BOTAO",
+   "id": "pKcb",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-BOTAO",
+   "id": "pKcv",
+   "prep": true,
+   "varreduras": 120,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-BOTAO",
+   "id": "pKca",
+   "prep": true,
+   "varreduras": 46,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-BOTAO",
+   "id": "pKct",
+   "prep": true,
+   "varreduras": 16,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-BOTAO",
+   "id": "pKcp",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-BOTAO",
+   "id": "K01",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-BOTAO",
+   "id": "K02",
+   "prep": false,
+   "varreduras": 89,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-BOTAO",
+   "id": "K03",
+   "prep": false,
+   "varreduras": 10,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-BOTAO",
+   "id": "K04",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-BOTAO",
+   "id": "K05",
+   "prep": false,
+   "varreduras": 50,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-BOTAO",
+   "id": "K06",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-BOTAO",
+   "id": "K07",
+   "prep": false,
+   "varreduras": 121,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-BOTAO",
+   "id": "K08",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PRESO",
+   "id": "pQi",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PRESO",
+   "id": "pQe0",
+   "prep": true,
+   "varreduras": 31,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PRESO",
+   "id": "pQe1",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PRESO",
+   "id": "Q01",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PRESO",
+   "id": "Q02",
+   "prep": false,
+   "varreduras": 120,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PRESO",
+   "id": "Q03",
+   "prep": false,
+   "varreduras": 62,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PRESO",
+   "id": "Q04",
+   "prep": false,
+   "varreduras": 91,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PRESO",
+   "id": "Q05",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PRESO",
+   "id": "Q06",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PRESO",
+   "id": "Q07",
+   "prep": false,
+   "varreduras": 59,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PRESO",
+   "id": "Q08",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PRESO",
+   "id": "Q09",
+   "prep": false,
+   "varreduras": 121,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PRESO",
+   "id": "Q10",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PARADA",
+   "id": "pZi",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PARADA",
+   "id": "pZe0",
+   "prep": true,
+   "varreduras": 31,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PARADA",
+   "id": "pZe1",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PARADA",
+   "id": "pZb",
+   "prep": true,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PARADA",
+   "id": "pZv",
+   "prep": true,
+   "varreduras": 121,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PARADA",
+   "id": "pZa",
+   "prep": true,
+   "varreduras": 9,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PARADA",
+   "id": "Z01",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PARADA",
+   "id": "Z02",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PARADA",
+   "id": "Z03",
+   "prep": false,
+   "varreduras": 45,
+   "situacao": "PASSA"
+  },
+  {
+   "programa": "S",
+   "sequencia": "SEQ-S-PARADA",
+   "id": "Z04",
+   "prep": false,
+   "varreduras": 1,
+   "situacao": "PASSA"
+  }
+ ],
+ "aprovado": true
+}

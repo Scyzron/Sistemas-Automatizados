@@ -1,0 +1,4888 @@
+{
+  "branches": {
+    "br_t12": {
+      "rungs": [
+        "t12_ped",
+        "t12_fila",
+        "t12_max"
+      ],
+      "input": false,
+      "out": false
+    },
+    "br_p1": {
+      "rungs": [
+        "p1_man",
+        "p1_e8"
+      ],
+      "input": false,
+      "out": false
+    },
+    "br_p4": {
+      "rungs": [
+        "p4_liga",
+        "p4_mant"
+      ],
+      "input": false,
+      "out": false
+    },
+    "br_o2": {
+      "rungs": [
+        "o2_e2",
+        "o2_mn"
+      ],
+      "input": false,
+      "out": false
+    },
+    "br_o5": {
+      "rungs": [
+        "o5_e5",
+        "o5_mn"
+      ],
+      "input": false,
+      "out": false
+    },
+    "br_o8": {
+      "rungs": [
+        "o8_fixo",
+        "o8_pisca"
+      ],
+      "input": false,
+      "out": false
+    }
+  },
+  "elements": {
+    "f1_e4": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E4_VERDE_B"
+          }
+        ]
+      }
+    },
+    "f1_r": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-C_FILA-R"
+          }
+        ]
+      }
+    },
+    "f2_det": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-DET_B"
+          }
+        ]
+      }
+    },
+    "f2_e4": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIO",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E4_VERDE_B"
+          }
+        ]
+      }
+    },
+    "f2_c": {
+      "configured": true,
+      "prevCU": false,
+      "prevCD": false,
+      "memInput": false,
+      "out": false,
+      "type": "CTU",
+      "parameters": {
+        "inOut": [
+          {
+            "type": [
+              "Counter"
+            ],
+            "uuid": "v-C_FILA"
+          }
+        ]
+      }
+    },
+    "f3_geq": {
+      "configured": true,
+      "out": false,
+      "type": "GEQ",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Number",
+              "Time"
+            ],
+            "uuid": "v-C_FILA-CV"
+          },
+          {
+            "type": [
+              "Number",
+              "Time"
+            ],
+            "uuid": "v-UM"
+          }
+        ]
+      }
+    },
+    "f3_dem": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-DEM_B"
+          }
+        ]
+      }
+    },
+    "f4_bt": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-BT_PED"
+          }
+        ]
+      }
+    },
+    "f4_e7": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIO",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E7_PED"
+          }
+        ]
+      }
+    },
+    "f4_man": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIO",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-MANUT"
+          }
+        ]
+      }
+    },
+    "f4_set": {
+      "configured": true,
+      "out": false,
+      "type": "OTL",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-SOL_PED"
+          }
+        ]
+      }
+    },
+    "t01_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E0_INICIO"
+          }
+        ]
+      }
+    },
+    "t01_q": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-T_INICIO-Q"
+          }
+        ]
+      }
+    },
+    "t01_tr": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR01"
+          }
+        ]
+      }
+    },
+    "t12_sol": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-SOL_PED"
+          }
+        ]
+      }
+    },
+    "t12_qu": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-C_FILA-QU"
+          }
+        ]
+      }
+    },
+    "t12_dem": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-DEM_B"
+          }
+        ]
+      }
+    },
+    "t12_tmax": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-T_MAX_A-Q"
+          }
+        ]
+      }
+    },
+    "t12_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E1_VERDE_A"
+          }
+        ]
+      }
+    },
+    "t12_tmin": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-T_MIN_A-Q"
+          }
+        ]
+      }
+    },
+    "t12_tr": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR12"
+          }
+        ]
+      }
+    },
+    "t23_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E2_AMAR_A"
+          }
+        ]
+      }
+    },
+    "t23_q": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-T_AMAR_A-Q"
+          }
+        ]
+      }
+    },
+    "t23_tr": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR23"
+          }
+        ]
+      }
+    },
+    "t34_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E3_TV_A"
+          }
+        ]
+      }
+    },
+    "t34_q": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-T_TV_A-Q"
+          }
+        ]
+      }
+    },
+    "t34_dem": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-DEM_B"
+          }
+        ]
+      }
+    },
+    "t34_tr": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR34"
+          }
+        ]
+      }
+    },
+    "t37_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E3_TV_A"
+          }
+        ]
+      }
+    },
+    "t37_q": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-T_TV_A-Q"
+          }
+        ]
+      }
+    },
+    "t37_dem": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIO",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-DEM_B"
+          }
+        ]
+      }
+    },
+    "t37_sol": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-SOL_PED"
+          }
+        ]
+      }
+    },
+    "t37_tr": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR37"
+          }
+        ]
+      }
+    },
+    "t31_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E3_TV_A"
+          }
+        ]
+      }
+    },
+    "t31_q": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-T_TV_A-Q"
+          }
+        ]
+      }
+    },
+    "t31_dem": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIO",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-DEM_B"
+          }
+        ]
+      }
+    },
+    "t31_sol": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIO",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-SOL_PED"
+          }
+        ]
+      }
+    },
+    "t31_tr": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR31"
+          }
+        ]
+      }
+    },
+    "t45_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E4_VERDE_B"
+          }
+        ]
+      }
+    },
+    "t45_q": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-T_VERDE_B-Q"
+          }
+        ]
+      }
+    },
+    "t45_tr": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR45"
+          }
+        ]
+      }
+    },
+    "t56_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E5_AMAR_B"
+          }
+        ]
+      }
+    },
+    "t56_q": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-T_AMAR_B-Q"
+          }
+        ]
+      }
+    },
+    "t56_tr": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR56"
+          }
+        ]
+      }
+    },
+    "t67_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E6_TV_B"
+          }
+        ]
+      }
+    },
+    "t67_q": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-T_TV_B-Q"
+          }
+        ]
+      }
+    },
+    "t67_sol": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-SOL_PED"
+          }
+        ]
+      }
+    },
+    "t67_tr": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR67"
+          }
+        ]
+      }
+    },
+    "t61_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E6_TV_B"
+          }
+        ]
+      }
+    },
+    "t61_q": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-T_TV_B-Q"
+          }
+        ]
+      }
+    },
+    "t61_sol": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIO",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-SOL_PED"
+          }
+        ]
+      }
+    },
+    "t61_tr": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR61"
+          }
+        ]
+      }
+    },
+    "t78_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E7_PED"
+          }
+        ]
+      }
+    },
+    "t78_q": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-T_PED-Q"
+          }
+        ]
+      }
+    },
+    "t78_tr": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR78"
+          }
+        ]
+      }
+    },
+    "t81_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E8_PED_PISCA"
+          }
+        ]
+      }
+    },
+    "t81_q": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-T_PISCA_PED-Q"
+          }
+        ]
+      }
+    },
+    "t81_tr": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR81"
+          }
+        ]
+      }
+    },
+    "s01_tr": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR01"
+          }
+        ]
+      }
+    },
+    "s01_rst": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E0_INICIO"
+          }
+        ]
+      }
+    },
+    "s01_set": {
+      "configured": true,
+      "out": false,
+      "type": "OTL",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E1_VERDE_A"
+          }
+        ]
+      }
+    },
+    "s12_tr": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR12"
+          }
+        ]
+      }
+    },
+    "s12_rst": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E1_VERDE_A"
+          }
+        ]
+      }
+    },
+    "s12_set": {
+      "configured": true,
+      "out": false,
+      "type": "OTL",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E2_AMAR_A"
+          }
+        ]
+      }
+    },
+    "s23_tr": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR23"
+          }
+        ]
+      }
+    },
+    "s23_rst": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E2_AMAR_A"
+          }
+        ]
+      }
+    },
+    "s23_set": {
+      "configured": true,
+      "out": false,
+      "type": "OTL",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E3_TV_A"
+          }
+        ]
+      }
+    },
+    "s34_tr": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR34"
+          }
+        ]
+      }
+    },
+    "s34_rst": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E3_TV_A"
+          }
+        ]
+      }
+    },
+    "s34_set": {
+      "configured": true,
+      "out": false,
+      "type": "OTL",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E4_VERDE_B"
+          }
+        ]
+      }
+    },
+    "s37_tr": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR37"
+          }
+        ]
+      }
+    },
+    "s37_rst": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E3_TV_A"
+          }
+        ]
+      }
+    },
+    "s37_set": {
+      "configured": true,
+      "out": false,
+      "type": "OTL",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E7_PED"
+          }
+        ]
+      }
+    },
+    "s31_tr": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR31"
+          }
+        ]
+      }
+    },
+    "s31_rst": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E3_TV_A"
+          }
+        ]
+      }
+    },
+    "s31_set": {
+      "configured": true,
+      "out": false,
+      "type": "OTL",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E1_VERDE_A"
+          }
+        ]
+      }
+    },
+    "s45_tr": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR45"
+          }
+        ]
+      }
+    },
+    "s45_rst": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E4_VERDE_B"
+          }
+        ]
+      }
+    },
+    "s45_set": {
+      "configured": true,
+      "out": false,
+      "type": "OTL",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E5_AMAR_B"
+          }
+        ]
+      }
+    },
+    "s56_tr": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR56"
+          }
+        ]
+      }
+    },
+    "s56_rst": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E5_AMAR_B"
+          }
+        ]
+      }
+    },
+    "s56_set": {
+      "configured": true,
+      "out": false,
+      "type": "OTL",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E6_TV_B"
+          }
+        ]
+      }
+    },
+    "s67_tr": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR67"
+          }
+        ]
+      }
+    },
+    "s67_rst": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E6_TV_B"
+          }
+        ]
+      }
+    },
+    "s67_set": {
+      "configured": true,
+      "out": false,
+      "type": "OTL",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E7_PED"
+          }
+        ]
+      }
+    },
+    "s61_tr": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR61"
+          }
+        ]
+      }
+    },
+    "s61_rst": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E6_TV_B"
+          }
+        ]
+      }
+    },
+    "s61_set": {
+      "configured": true,
+      "out": false,
+      "type": "OTL",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E1_VERDE_A"
+          }
+        ]
+      }
+    },
+    "s78_tr": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR78"
+          }
+        ]
+      }
+    },
+    "s78_rst": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E7_PED"
+          }
+        ]
+      }
+    },
+    "s78_set": {
+      "configured": true,
+      "out": false,
+      "type": "OTL",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E8_PED_PISCA"
+          }
+        ]
+      }
+    },
+    "s81_tr": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-TR81"
+          }
+        ]
+      }
+    },
+    "s81_rst": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E8_PED_PISCA"
+          }
+        ]
+      }
+    },
+    "s81_set": {
+      "configured": true,
+      "out": false,
+      "type": "OTL",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E1_VERDE_A"
+          }
+        ]
+      }
+    },
+    "sp_e7": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E7_PED"
+          }
+        ]
+      }
+    },
+    "sp_rst": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-SOL_PED"
+          }
+        ]
+      }
+    },
+    "mn_man": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-MANUT"
+          }
+        ]
+      }
+    },
+    "mn_r0": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E0_INICIO"
+          }
+        ]
+      }
+    },
+    "mn_r1": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E1_VERDE_A"
+          }
+        ]
+      }
+    },
+    "mn_r2": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E2_AMAR_A"
+          }
+        ]
+      }
+    },
+    "mn_r3": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E3_TV_A"
+          }
+        ]
+      }
+    },
+    "mn_r4": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E4_VERDE_B"
+          }
+        ]
+      }
+    },
+    "mn_r5": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E5_AMAR_B"
+          }
+        ]
+      }
+    },
+    "mn_r6": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E6_TV_B"
+          }
+        ]
+      }
+    },
+    "mn_r7": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E7_PED"
+          }
+        ]
+      }
+    },
+    "mn_r8": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E8_PED_PISCA"
+          }
+        ]
+      }
+    },
+    "mn_init": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-INIT"
+          }
+        ]
+      }
+    },
+    "mn_sol": {
+      "configured": true,
+      "out": false,
+      "type": "OTU",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-SOL_PED"
+          }
+        ]
+      }
+    },
+    "tm0_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E0_INICIO"
+          }
+        ]
+      }
+    },
+    "tm0_t": {
+      "configured": true,
+      "type": "TON",
+      "out": false,
+      "parameters": {
+        "inOut": [
+          {
+            "type": [
+              "Timer"
+            ],
+            "uuid": "v-T_INICIO"
+          }
+        ]
+      }
+    },
+    "tm1_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E1_VERDE_A"
+          }
+        ]
+      }
+    },
+    "tm1_t": {
+      "configured": true,
+      "type": "TON",
+      "out": false,
+      "parameters": {
+        "inOut": [
+          {
+            "type": [
+              "Timer"
+            ],
+            "uuid": "v-T_MIN_A"
+          }
+        ]
+      }
+    },
+    "tm2_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E1_VERDE_A"
+          }
+        ]
+      }
+    },
+    "tm2_t": {
+      "configured": true,
+      "type": "TON",
+      "out": false,
+      "parameters": {
+        "inOut": [
+          {
+            "type": [
+              "Timer"
+            ],
+            "uuid": "v-T_MAX_A"
+          }
+        ]
+      }
+    },
+    "tm3_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E2_AMAR_A"
+          }
+        ]
+      }
+    },
+    "tm3_t": {
+      "configured": true,
+      "type": "TON",
+      "out": false,
+      "parameters": {
+        "inOut": [
+          {
+            "type": [
+              "Timer"
+            ],
+            "uuid": "v-T_AMAR_A"
+          }
+        ]
+      }
+    },
+    "tm4_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E3_TV_A"
+          }
+        ]
+      }
+    },
+    "tm4_t": {
+      "configured": true,
+      "type": "TON",
+      "out": false,
+      "parameters": {
+        "inOut": [
+          {
+            "type": [
+              "Timer"
+            ],
+            "uuid": "v-T_TV_A"
+          }
+        ]
+      }
+    },
+    "tm5_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E4_VERDE_B"
+          }
+        ]
+      }
+    },
+    "tm5_t": {
+      "configured": true,
+      "type": "TON",
+      "out": false,
+      "parameters": {
+        "inOut": [
+          {
+            "type": [
+              "Timer"
+            ],
+            "uuid": "v-T_VERDE_B"
+          }
+        ]
+      }
+    },
+    "tm6_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E5_AMAR_B"
+          }
+        ]
+      }
+    },
+    "tm6_t": {
+      "configured": true,
+      "type": "TON",
+      "out": false,
+      "parameters": {
+        "inOut": [
+          {
+            "type": [
+              "Timer"
+            ],
+            "uuid": "v-T_AMAR_B"
+          }
+        ]
+      }
+    },
+    "tm7_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E6_TV_B"
+          }
+        ]
+      }
+    },
+    "tm7_t": {
+      "configured": true,
+      "type": "TON",
+      "out": false,
+      "parameters": {
+        "inOut": [
+          {
+            "type": [
+              "Timer"
+            ],
+            "uuid": "v-T_TV_B"
+          }
+        ]
+      }
+    },
+    "tm8_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E7_PED"
+          }
+        ]
+      }
+    },
+    "tm8_t": {
+      "configured": true,
+      "type": "TON",
+      "out": false,
+      "parameters": {
+        "inOut": [
+          {
+            "type": [
+              "Timer"
+            ],
+            "uuid": "v-T_PED"
+          }
+        ]
+      }
+    },
+    "tm9_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E8_PED_PISCA"
+          }
+        ]
+      }
+    },
+    "tm9_t": {
+      "configured": true,
+      "type": "TON",
+      "out": false,
+      "parameters": {
+        "inOut": [
+          {
+            "type": [
+              "Timer"
+            ],
+            "uuid": "v-T_PISCA_PED"
+          }
+        ]
+      }
+    },
+    "p1_m": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-MANUT"
+          }
+        ]
+      }
+    },
+    "p1_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E8_PED_PISCA"
+          }
+        ]
+      }
+    },
+    "p1_hab": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-HAB_PISCA"
+          }
+        ]
+      }
+    },
+    "p2_h": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-HAB_PISCA"
+          }
+        ]
+      }
+    },
+    "p2_f": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIO",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-FASE"
+          }
+        ]
+      }
+    },
+    "p2_t": {
+      "configured": true,
+      "type": "TON",
+      "out": false,
+      "parameters": {
+        "inOut": [
+          {
+            "type": [
+              "Timer"
+            ],
+            "uuid": "v-T_LUZ"
+          }
+        ]
+      }
+    },
+    "p3_h": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-HAB_PISCA"
+          }
+        ]
+      }
+    },
+    "p3_f": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-FASE"
+          }
+        ]
+      }
+    },
+    "p3_t": {
+      "configured": true,
+      "type": "TON",
+      "out": false,
+      "parameters": {
+        "inOut": [
+          {
+            "type": [
+              "Timer"
+            ],
+            "uuid": "v-T_APAG"
+          }
+        ]
+      }
+    },
+    "p4_h": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-HAB_PISCA"
+          }
+        ]
+      }
+    },
+    "p4_f0": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIO",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-FASE"
+          }
+        ]
+      }
+    },
+    "p4_lq": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-T_LUZ-Q"
+          }
+        ]
+      }
+    },
+    "p4_f1": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-FASE"
+          }
+        ]
+      }
+    },
+    "p4_aq": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIO",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-T_APAG-Q"
+          }
+        ]
+      }
+    },
+    "p4_fase": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-FASE"
+          }
+        ]
+      }
+    },
+    "p5_h": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-HAB_PISCA"
+          }
+        ]
+      }
+    },
+    "p5_f": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIO",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-FASE"
+          }
+        ]
+      }
+    },
+    "p5_luz": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-LUZ_PISCA"
+          }
+        ]
+      }
+    },
+    "o1_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E1_VERDE_A"
+          }
+        ]
+      }
+    },
+    "o1_l": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-A_VERDE"
+          }
+        ]
+      }
+    },
+    "o2_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E2_AMAR_A"
+          }
+        ]
+      }
+    },
+    "o2_m": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-MANUT"
+          }
+        ]
+      }
+    },
+    "o2_p": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-LUZ_PISCA"
+          }
+        ]
+      }
+    },
+    "o2_l": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-A_AMARELO"
+          }
+        ]
+      }
+    },
+    "o3_m": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIO",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-MANUT"
+          }
+        ]
+      }
+    },
+    "o3_e1": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIO",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E1_VERDE_A"
+          }
+        ]
+      }
+    },
+    "o3_e2": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIO",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E2_AMAR_A"
+          }
+        ]
+      }
+    },
+    "o3_l": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-A_VERMELHO"
+          }
+        ]
+      }
+    },
+    "o4_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E4_VERDE_B"
+          }
+        ]
+      }
+    },
+    "o4_l": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-B_VERDE"
+          }
+        ]
+      }
+    },
+    "o5_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E5_AMAR_B"
+          }
+        ]
+      }
+    },
+    "o5_m": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-MANUT"
+          }
+        ]
+      }
+    },
+    "o5_p": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-LUZ_PISCA"
+          }
+        ]
+      }
+    },
+    "o5_l": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-B_AMARELO"
+          }
+        ]
+      }
+    },
+    "o6_m": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIO",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-MANUT"
+          }
+        ]
+      }
+    },
+    "o6_e4": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIO",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E4_VERDE_B"
+          }
+        ]
+      }
+    },
+    "o6_e5": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIO",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E5_AMAR_B"
+          }
+        ]
+      }
+    },
+    "o6_l": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-B_VERMELHO"
+          }
+        ]
+      }
+    },
+    "o7_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E7_PED"
+          }
+        ]
+      }
+    },
+    "o7_l": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-PED_VERDE"
+          }
+        ]
+      }
+    },
+    "o8_m": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIO",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-MANUT"
+          }
+        ]
+      }
+    },
+    "o8_e7": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIO",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E7_PED"
+          }
+        ]
+      }
+    },
+    "o8_e8": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIO",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E8_PED_PISCA"
+          }
+        ]
+      }
+    },
+    "o8_e": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E8_PED_PISCA"
+          }
+        ]
+      }
+    },
+    "o8_p": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-LUZ_PISCA"
+          }
+        ]
+      }
+    },
+    "o8_l": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-PED_VERMELHO"
+          }
+        ]
+      }
+    },
+    "o9_s": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIC",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-SOL_PED"
+          }
+        ]
+      }
+    },
+    "o9_l": {
+      "configured": true,
+      "out": false,
+      "type": "OTE",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-PED_AGUARDE"
+          }
+        ]
+      }
+    },
+    "in_i": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIO",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-INIT"
+          }
+        ]
+      }
+    },
+    "in_m": {
+      "configured": true,
+      "memInput": false,
+      "out": false,
+      "type": "XIO",
+      "parameters": {
+        "input": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-MANUT"
+          }
+        ]
+      }
+    },
+    "in_e0": {
+      "configured": true,
+      "out": false,
+      "type": "OTL",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-E0_INICIO"
+          }
+        ]
+      }
+    },
+    "in_set": {
+      "configured": true,
+      "out": false,
+      "type": "OTL",
+      "parameters": {
+        "output": [
+          {
+            "type": [
+              "Bool"
+            ],
+            "uuid": "v-INIT"
+          }
+        ]
+      }
+    }
+  },
+  "runglist": [
+    "f1",
+    "f2",
+    "f3",
+    "f4",
+    "t01",
+    "t12",
+    "t23",
+    "t34",
+    "t37",
+    "t31",
+    "t45",
+    "t56",
+    "t67",
+    "t61",
+    "t78",
+    "t81",
+    "s01",
+    "s12",
+    "s23",
+    "s34",
+    "s37",
+    "s31",
+    "s45",
+    "s56",
+    "s67",
+    "s61",
+    "s78",
+    "s81",
+    "sp",
+    "mn",
+    "tm0",
+    "tm1",
+    "tm2",
+    "tm3",
+    "tm4",
+    "tm5",
+    "tm6",
+    "tm7",
+    "tm8",
+    "tm9",
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5",
+    "o1",
+    "o2",
+    "o3",
+    "o4",
+    "o5",
+    "o6",
+    "o7",
+    "o8",
+    "o9",
+    "in"
+  ],
+  "rungs": {
+    "f1": {
+      "comment": "F1 — Zera a fila quando B abre: C_FILA.R = E4_VERDE_B.",
+      "elements": [
+        "f1_e4",
+        "f1_r"
+      ],
+      "input": false,
+      "out": false
+    },
+    "f2": {
+      "comment": "F2 — Fila de B: CTU C_FILA (PV = 3) na borda de DET_B · ¬E4_VERDE_B — conta quem chega com B fechada e quem continua sobre o laço quando o verde de B termina.",
+      "elements": [
+        "f2_det",
+        "f2_e4",
+        "f2_c"
+      ],
+      "input": false,
+      "out": false
+    },
+    "f3": {
+      "comment": "F3 — Demanda em B: DEM_B = (C_FILA.CV ≥ 1).",
+      "elements": [
+        "f3_geq",
+        "f3_dem"
+      ],
+      "input": false,
+      "out": false
+    },
+    "f4": {
+      "comment": "F4 — Pedido de pedestre: BT_PED · ¬E7_PED · ¬MANUT → SET SOL_PED (memória do pedido).",
+      "elements": [
+        "f4_bt",
+        "f4_e7",
+        "f4_man",
+        "f4_set"
+      ],
+      "input": false,
+      "out": false
+    },
+    "t01": {
+      "comment": "T01 — Fim da partida: E0 · T_INICIO.Q.",
+      "elements": [
+        "t01_e",
+        "t01_q",
+        "t01_tr"
+      ],
+      "input": false,
+      "out": false
+    },
+    "t12_ped": {
+      "comment": "",
+      "elements": [
+        "t12_sol"
+      ],
+      "input": false,
+      "out": false
+    },
+    "t12_fila": {
+      "comment": "",
+      "elements": [
+        "t12_qu"
+      ],
+      "input": false,
+      "out": false
+    },
+    "t12_max": {
+      "comment": "",
+      "elements": [
+        "t12_dem",
+        "t12_tmax"
+      ],
+      "input": false,
+      "out": false
+    },
+    "t12": {
+      "comment": "T12 — Fim do verde A: E1 · T_MIN_A.Q · (SOL_PED + C_FILA.QU + DEM_B·T_MAX_A.Q).",
+      "elements": [
+        "t12_e",
+        "t12_tmin",
+        "br_t12",
+        "t12_tr"
+      ],
+      "input": false,
+      "out": false
+    },
+    "t23": {
+      "comment": "T23 — Fim do amarelo A: E2 · T_AMAR_A.Q.",
+      "elements": [
+        "t23_e",
+        "t23_q",
+        "t23_tr"
+      ],
+      "input": false,
+      "out": false
+    },
+    "t34": {
+      "comment": "T34 — Vermelho geral → verde B se há demanda: E3 · T_TV_A.Q · DEM_B.",
+      "elements": [
+        "t34_e",
+        "t34_q",
+        "t34_dem",
+        "t34_tr"
+      ],
+      "input": false,
+      "out": false
+    },
+    "t37": {
+      "comment": "T37 — Vermelho geral → pedestre se não há demanda em B e há pedido: E3 · T_TV_A.Q · ¬DEM_B · SOL_PED.",
+      "elements": [
+        "t37_e",
+        "t37_q",
+        "t37_dem",
+        "t37_sol",
+        "t37_tr"
+      ],
+      "input": false,
+      "out": false
+    },
+    "t31": {
+      "comment": "T31 — Vermelho geral → verde A se nada mais espera: E3 · T_TV_A.Q · ¬DEM_B · ¬SOL_PED.",
+      "elements": [
+        "t31_e",
+        "t31_q",
+        "t31_dem",
+        "t31_sol",
+        "t31_tr"
+      ],
+      "input": false,
+      "out": false
+    },
+    "t45": {
+      "comment": "T45 — Fim do verde B: E4 · T_VERDE_B.Q.",
+      "elements": [
+        "t45_e",
+        "t45_q",
+        "t45_tr"
+      ],
+      "input": false,
+      "out": false
+    },
+    "t56": {
+      "comment": "T56 — Fim do amarelo B: E5 · T_AMAR_B.Q.",
+      "elements": [
+        "t56_e",
+        "t56_q",
+        "t56_tr"
+      ],
+      "input": false,
+      "out": false
+    },
+    "t67": {
+      "comment": "T67 — Vermelho geral → pedestre se há pedido: E6 · T_TV_B.Q · SOL_PED.",
+      "elements": [
+        "t67_e",
+        "t67_q",
+        "t67_sol",
+        "t67_tr"
+      ],
+      "input": false,
+      "out": false
+    },
+    "t61": {
+      "comment": "T61 — Vermelho geral → verde A sem pedido: E6 · T_TV_B.Q · ¬SOL_PED.",
+      "elements": [
+        "t61_e",
+        "t61_q",
+        "t61_sol",
+        "t61_tr"
+      ],
+      "input": false,
+      "out": false
+    },
+    "t78": {
+      "comment": "T78 — Fim do verde de pedestre: E7 · T_PED.Q.",
+      "elements": [
+        "t78_e",
+        "t78_q",
+        "t78_tr"
+      ],
+      "input": false,
+      "out": false
+    },
+    "t81": {
+      "comment": "T81 — Fim do vermelho piscante: E8 · T_PISCA_PED.Q.",
+      "elements": [
+        "t81_e",
+        "t81_q",
+        "t81_tr"
+      ],
+      "input": false,
+      "out": false
+    },
+    "s01": {
+      "comment": "S01 — TR01: desativa E0_INICIO e ativa E1_VERDE_A.",
+      "elements": [
+        "s01_tr",
+        "s01_rst",
+        "s01_set"
+      ],
+      "input": false,
+      "out": false
+    },
+    "s12": {
+      "comment": "S12 — TR12: desativa E1_VERDE_A e ativa E2_AMAR_A.",
+      "elements": [
+        "s12_tr",
+        "s12_rst",
+        "s12_set"
+      ],
+      "input": false,
+      "out": false
+    },
+    "s23": {
+      "comment": "S23 — TR23: desativa E2_AMAR_A e ativa E3_TV_A.",
+      "elements": [
+        "s23_tr",
+        "s23_rst",
+        "s23_set"
+      ],
+      "input": false,
+      "out": false
+    },
+    "s34": {
+      "comment": "S34 — TR34: desativa E3_TV_A e ativa E4_VERDE_B.",
+      "elements": [
+        "s34_tr",
+        "s34_rst",
+        "s34_set"
+      ],
+      "input": false,
+      "out": false
+    },
+    "s37": {
+      "comment": "S37 — TR37: desativa E3_TV_A e ativa E7_PED.",
+      "elements": [
+        "s37_tr",
+        "s37_rst",
+        "s37_set"
+      ],
+      "input": false,
+      "out": false
+    },
+    "s31": {
+      "comment": "S31 — TR31: desativa E3_TV_A e ativa E1_VERDE_A.",
+      "elements": [
+        "s31_tr",
+        "s31_rst",
+        "s31_set"
+      ],
+      "input": false,
+      "out": false
+    },
+    "s45": {
+      "comment": "S45 — TR45: desativa E4_VERDE_B e ativa E5_AMAR_B.",
+      "elements": [
+        "s45_tr",
+        "s45_rst",
+        "s45_set"
+      ],
+      "input": false,
+      "out": false
+    },
+    "s56": {
+      "comment": "S56 — TR56: desativa E5_AMAR_B e ativa E6_TV_B.",
+      "elements": [
+        "s56_tr",
+        "s56_rst",
+        "s56_set"
+      ],
+      "input": false,
+      "out": false
+    },
+    "s67": {
+      "comment": "S67 — TR67: desativa E6_TV_B e ativa E7_PED.",
+      "elements": [
+        "s67_tr",
+        "s67_rst",
+        "s67_set"
+      ],
+      "input": false,
+      "out": false
+    },
+    "s61": {
+      "comment": "S61 — TR61: desativa E6_TV_B e ativa E1_VERDE_A.",
+      "elements": [
+        "s61_tr",
+        "s61_rst",
+        "s61_set"
+      ],
+      "input": false,
+      "out": false
+    },
+    "s78": {
+      "comment": "S78 — TR78: desativa E7_PED e ativa E8_PED_PISCA.",
+      "elements": [
+        "s78_tr",
+        "s78_rst",
+        "s78_set"
+      ],
+      "input": false,
+      "out": false
+    },
+    "s81": {
+      "comment": "S81 — TR81: desativa E8_PED_PISCA e ativa E1_VERDE_A.",
+      "elements": [
+        "s81_tr",
+        "s81_rst",
+        "s81_set"
+      ],
+      "input": false,
+      "out": false
+    },
+    "sp": {
+      "comment": "SP — A fase de pedestre atende o pedido: E7_PED → RESET SOL_PED.",
+      "elements": [
+        "sp_e7",
+        "sp_rst"
+      ],
+      "input": false,
+      "out": false
+    },
+    "mn": {
+      "comment": "MN — Manutenção: MANUT zera todas as etapas, INIT e o pedido (o programa recomeça pela partida).",
+      "elements": [
+        "mn_man",
+        "mn_r0",
+        "mn_r1",
+        "mn_r2",
+        "mn_r3",
+        "mn_r4",
+        "mn_r5",
+        "mn_r6",
+        "mn_r7",
+        "mn_r8",
+        "mn_init",
+        "mn_sol"
+      ],
+      "input": false,
+      "out": false
+    },
+    "tm0": {
+      "comment": "TM0 — T_INICIO (PT = 2000 ms) conta enquanto E0_INICIO está ativa.",
+      "elements": [
+        "tm0_e",
+        "tm0_t"
+      ],
+      "input": false,
+      "out": false
+    },
+    "tm1": {
+      "comment": "TM1 — T_MIN_A (PT = 8000 ms) conta enquanto E1_VERDE_A está ativa.",
+      "elements": [
+        "tm1_e",
+        "tm1_t"
+      ],
+      "input": false,
+      "out": false
+    },
+    "tm2": {
+      "comment": "TM2 — T_MAX_A (PT = 16000 ms) conta enquanto E1_VERDE_A está ativa.",
+      "elements": [
+        "tm2_e",
+        "tm2_t"
+      ],
+      "input": false,
+      "out": false
+    },
+    "tm3": {
+      "comment": "TM3 — T_AMAR_A (PT = 3000 ms) conta enquanto E2_AMAR_A está ativa.",
+      "elements": [
+        "tm3_e",
+        "tm3_t"
+      ],
+      "input": false,
+      "out": false
+    },
+    "tm4": {
+      "comment": "TM4 — T_TV_A (PT = 1000 ms) conta enquanto E3_TV_A está ativa.",
+      "elements": [
+        "tm4_e",
+        "tm4_t"
+      ],
+      "input": false,
+      "out": false
+    },
+    "tm5": {
+      "comment": "TM5 — T_VERDE_B (PT = 6000 ms) conta enquanto E4_VERDE_B está ativa.",
+      "elements": [
+        "tm5_e",
+        "tm5_t"
+      ],
+      "input": false,
+      "out": false
+    },
+    "tm6": {
+      "comment": "TM6 — T_AMAR_B (PT = 3000 ms) conta enquanto E5_AMAR_B está ativa.",
+      "elements": [
+        "tm6_e",
+        "tm6_t"
+      ],
+      "input": false,
+      "out": false
+    },
+    "tm7": {
+      "comment": "TM7 — T_TV_B (PT = 1000 ms) conta enquanto E6_TV_B está ativa.",
+      "elements": [
+        "tm7_e",
+        "tm7_t"
+      ],
+      "input": false,
+      "out": false
+    },
+    "tm8": {
+      "comment": "TM8 — T_PED (PT = 6000 ms) conta enquanto E7_PED está ativa.",
+      "elements": [
+        "tm8_e",
+        "tm8_t"
+      ],
+      "input": false,
+      "out": false
+    },
+    "tm9": {
+      "comment": "TM9 — T_PISCA_PED (PT = 4000 ms) conta enquanto E8_PED_PISCA está ativa.",
+      "elements": [
+        "tm9_e",
+        "tm9_t"
+      ],
+      "input": false,
+      "out": false
+    },
+    "p1_man": {
+      "comment": "",
+      "elements": [
+        "p1_m"
+      ],
+      "input": false,
+      "out": false
+    },
+    "p1_e8": {
+      "comment": "",
+      "elements": [
+        "p1_e"
+      ],
+      "input": false,
+      "out": false
+    },
+    "p1": {
+      "comment": "P1 — HAB_PISCA = MANUT + E8_PED_PISCA.",
+      "elements": [
+        "br_p1",
+        "p1_hab"
+      ],
+      "input": false,
+      "out": false
+    },
+    "p2": {
+      "comment": "P2 — Meia-onda acesa: HAB_PISCA · ¬FASE cronometra T_LUZ (0,5 s).",
+      "elements": [
+        "p2_h",
+        "p2_f",
+        "p2_t"
+      ],
+      "input": false,
+      "out": false
+    },
+    "p3": {
+      "comment": "P3 — Meia-onda apagada: HAB_PISCA · FASE cronometra T_APAG (0,5 s).",
+      "elements": [
+        "p3_h",
+        "p3_f",
+        "p3_t"
+      ],
+      "input": false,
+      "out": false
+    },
+    "p4_liga": {
+      "comment": "",
+      "elements": [
+        "p4_f0",
+        "p4_lq"
+      ],
+      "input": false,
+      "out": false
+    },
+    "p4_mant": {
+      "comment": "",
+      "elements": [
+        "p4_f1",
+        "p4_aq"
+      ],
+      "input": false,
+      "out": false
+    },
+    "p4": {
+      "comment": "P4 — FASE = HAB_PISCA · (¬FASE·T_LUZ.Q + FASE·¬T_APAG.Q): troca ao fim de cada meia-onda.",
+      "elements": [
+        "p4_h",
+        "br_p4",
+        "p4_fase"
+      ],
+      "input": false,
+      "out": false
+    },
+    "p5": {
+      "comment": "P5 — LUZ_PISCA = HAB_PISCA · ¬FASE (começa acesa).",
+      "elements": [
+        "p5_h",
+        "p5_f",
+        "p5_luz"
+      ],
+      "input": false,
+      "out": false
+    },
+    "o1": {
+      "comment": "O1 — A_VERDE = E1_VERDE_A.",
+      "elements": [
+        "o1_e",
+        "o1_l"
+      ],
+      "input": false,
+      "out": false
+    },
+    "o2_e2": {
+      "comment": "",
+      "elements": [
+        "o2_e"
+      ],
+      "input": false,
+      "out": false
+    },
+    "o2_mn": {
+      "comment": "",
+      "elements": [
+        "o2_m",
+        "o2_p"
+      ],
+      "input": false,
+      "out": false
+    },
+    "o2": {
+      "comment": "O2 — A_AMARELO = E2_AMAR_A + MANUT·LUZ_PISCA.",
+      "elements": [
+        "br_o2",
+        "o2_l"
+      ],
+      "input": false,
+      "out": false
+    },
+    "o3": {
+      "comment": "O3 — A_VERMELHO = ¬MANUT · ¬E1 · ¬E2: vermelho é o estado por padrão.",
+      "elements": [
+        "o3_m",
+        "o3_e1",
+        "o3_e2",
+        "o3_l"
+      ],
+      "input": false,
+      "out": false
+    },
+    "o4": {
+      "comment": "O4 — B_VERDE = E4_VERDE_B.",
+      "elements": [
+        "o4_e",
+        "o4_l"
+      ],
+      "input": false,
+      "out": false
+    },
+    "o5_e5": {
+      "comment": "",
+      "elements": [
+        "o5_e"
+      ],
+      "input": false,
+      "out": false
+    },
+    "o5_mn": {
+      "comment": "",
+      "elements": [
+        "o5_m",
+        "o5_p"
+      ],
+      "input": false,
+      "out": false
+    },
+    "o5": {
+      "comment": "O5 — B_AMARELO = E5_AMAR_B + MANUT·LUZ_PISCA.",
+      "elements": [
+        "br_o5",
+        "o5_l"
+      ],
+      "input": false,
+      "out": false
+    },
+    "o6": {
+      "comment": "O6 — B_VERMELHO = ¬MANUT · ¬E4 · ¬E5.",
+      "elements": [
+        "o6_m",
+        "o6_e4",
+        "o6_e5",
+        "o6_l"
+      ],
+      "input": false,
+      "out": false
+    },
+    "o7": {
+      "comment": "O7 — PED_VERDE = E7_PED.",
+      "elements": [
+        "o7_e",
+        "o7_l"
+      ],
+      "input": false,
+      "out": false
+    },
+    "o8_fixo": {
+      "comment": "",
+      "elements": [
+        "o8_m",
+        "o8_e7",
+        "o8_e8"
+      ],
+      "input": false,
+      "out": false
+    },
+    "o8_pisca": {
+      "comment": "",
+      "elements": [
+        "o8_e",
+        "o8_p"
+      ],
+      "input": false,
+      "out": false
+    },
+    "o8": {
+      "comment": "O8 — PED_VERMELHO = ¬MANUT·¬E7·¬E8 + E8·LUZ_PISCA (fixo, ou piscando no fim da travessia).",
+      "elements": [
+        "br_o8",
+        "o8_l"
+      ],
+      "input": false,
+      "out": false
+    },
+    "o9": {
+      "comment": "O9 — PED_AGUARDE = SOL_PED (pedido registrado).",
+      "elements": [
+        "o9_s",
+        "o9_l"
+      ],
+      "input": false,
+      "out": false
+    },
+    "in": {
+      "comment": "IN — Partida: ¬INIT · ¬MANUT → SET E0_INICIO e SET INIT (ao carregar o projeto e ao sair da manutenção).",
+      "elements": [
+        "in_i",
+        "in_m",
+        "in_e0",
+        "in_set"
+      ],
+      "input": false,
+      "out": false
+    }
+  },
+  "variables": {
+    "v-DET_B": {
+      "name": "DET_B",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "f2_det"
+      ],
+      "subVars": {}
+    },
+    "v-BT_PED": {
+      "name": "BT_PED",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "f4_bt"
+      ],
+      "subVars": {}
+    },
+    "v-MANUT": {
+      "name": "MANUT",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "f4_man",
+        "mn_man",
+        "p1_m",
+        "o2_m",
+        "o3_m",
+        "o5_m",
+        "o6_m",
+        "o8_m",
+        "in_m"
+      ],
+      "subVars": {}
+    },
+    "v-A_VERDE": {
+      "name": "A_VERDE",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "o1_l"
+      ],
+      "subVars": {}
+    },
+    "v-A_AMARELO": {
+      "name": "A_AMARELO",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "o2_l"
+      ],
+      "subVars": {}
+    },
+    "v-A_VERMELHO": {
+      "name": "A_VERMELHO",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "o3_l"
+      ],
+      "subVars": {}
+    },
+    "v-B_VERDE": {
+      "name": "B_VERDE",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "o4_l"
+      ],
+      "subVars": {}
+    },
+    "v-B_AMARELO": {
+      "name": "B_AMARELO",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "o5_l"
+      ],
+      "subVars": {}
+    },
+    "v-B_VERMELHO": {
+      "name": "B_VERMELHO",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "o6_l"
+      ],
+      "subVars": {}
+    },
+    "v-PED_VERDE": {
+      "name": "PED_VERDE",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "o7_l"
+      ],
+      "subVars": {}
+    },
+    "v-PED_VERMELHO": {
+      "name": "PED_VERMELHO",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "o8_l"
+      ],
+      "subVars": {}
+    },
+    "v-PED_AGUARDE": {
+      "name": "PED_AGUARDE",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "o9_l"
+      ],
+      "subVars": {}
+    },
+    "v-E0_INICIO": {
+      "name": "E0_INICIO",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t01_e",
+        "s01_rst",
+        "mn_r0",
+        "tm0_e",
+        "in_e0"
+      ],
+      "subVars": {}
+    },
+    "v-E1_VERDE_A": {
+      "name": "E1_VERDE_A",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t12_e",
+        "s01_set",
+        "s12_rst",
+        "s31_set",
+        "s61_set",
+        "s81_set",
+        "mn_r1",
+        "tm1_e",
+        "tm2_e",
+        "o1_e",
+        "o3_e1"
+      ],
+      "subVars": {}
+    },
+    "v-E2_AMAR_A": {
+      "name": "E2_AMAR_A",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t23_e",
+        "s12_set",
+        "s23_rst",
+        "mn_r2",
+        "tm3_e",
+        "o2_e",
+        "o3_e2"
+      ],
+      "subVars": {}
+    },
+    "v-E3_TV_A": {
+      "name": "E3_TV_A",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t34_e",
+        "t37_e",
+        "t31_e",
+        "s23_set",
+        "s34_rst",
+        "s37_rst",
+        "s31_rst",
+        "mn_r3",
+        "tm4_e"
+      ],
+      "subVars": {}
+    },
+    "v-E4_VERDE_B": {
+      "name": "E4_VERDE_B",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "f1_e4",
+        "f2_e4",
+        "t45_e",
+        "s34_set",
+        "s45_rst",
+        "mn_r4",
+        "tm5_e",
+        "o4_e",
+        "o6_e4"
+      ],
+      "subVars": {}
+    },
+    "v-E5_AMAR_B": {
+      "name": "E5_AMAR_B",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t56_e",
+        "s45_set",
+        "s56_rst",
+        "mn_r5",
+        "tm6_e",
+        "o5_e",
+        "o6_e5"
+      ],
+      "subVars": {}
+    },
+    "v-E6_TV_B": {
+      "name": "E6_TV_B",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t67_e",
+        "t61_e",
+        "s56_set",
+        "s67_rst",
+        "s61_rst",
+        "mn_r6",
+        "tm7_e"
+      ],
+      "subVars": {}
+    },
+    "v-E7_PED": {
+      "name": "E7_PED",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "f4_e7",
+        "t78_e",
+        "s37_set",
+        "s67_set",
+        "s78_rst",
+        "sp_e7",
+        "mn_r7",
+        "tm8_e",
+        "o7_e",
+        "o8_e7"
+      ],
+      "subVars": {}
+    },
+    "v-E8_PED_PISCA": {
+      "name": "E8_PED_PISCA",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t81_e",
+        "s78_set",
+        "s81_rst",
+        "mn_r8",
+        "tm9_e",
+        "p1_e",
+        "o8_e8",
+        "o8_e"
+      ],
+      "subVars": {}
+    },
+    "v-INIT": {
+      "name": "INIT",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "mn_init",
+        "in_i",
+        "in_set"
+      ],
+      "subVars": {}
+    },
+    "v-SOL_PED": {
+      "name": "SOL_PED",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "f4_set",
+        "t12_sol",
+        "t37_sol",
+        "t31_sol",
+        "t67_sol",
+        "t61_sol",
+        "sp_rst",
+        "mn_sol",
+        "o9_s"
+      ],
+      "subVars": {}
+    },
+    "v-DEM_B": {
+      "name": "DEM_B",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "f3_dem",
+        "t12_dem",
+        "t34_dem",
+        "t37_dem",
+        "t31_dem"
+      ],
+      "subVars": {}
+    },
+    "v-HAB_PISCA": {
+      "name": "HAB_PISCA",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "p1_hab",
+        "p2_h",
+        "p3_h",
+        "p4_h",
+        "p5_h"
+      ],
+      "subVars": {}
+    },
+    "v-FASE": {
+      "name": "FASE",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "p2_f",
+        "p3_f",
+        "p4_f0",
+        "p4_f1",
+        "p4_fase",
+        "p5_f"
+      ],
+      "subVars": {}
+    },
+    "v-LUZ_PISCA": {
+      "name": "LUZ_PISCA",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "p5_luz",
+        "o2_p",
+        "o5_p",
+        "o8_p"
+      ],
+      "subVars": {}
+    },
+    "v-TR01": {
+      "name": "TR01",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t01_tr",
+        "s01_tr"
+      ],
+      "subVars": {}
+    },
+    "v-TR12": {
+      "name": "TR12",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t12_tr",
+        "s12_tr"
+      ],
+      "subVars": {}
+    },
+    "v-TR23": {
+      "name": "TR23",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t23_tr",
+        "s23_tr"
+      ],
+      "subVars": {}
+    },
+    "v-TR34": {
+      "name": "TR34",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t34_tr",
+        "s34_tr"
+      ],
+      "subVars": {}
+    },
+    "v-TR37": {
+      "name": "TR37",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t37_tr",
+        "s37_tr"
+      ],
+      "subVars": {}
+    },
+    "v-TR31": {
+      "name": "TR31",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t31_tr",
+        "s31_tr"
+      ],
+      "subVars": {}
+    },
+    "v-TR45": {
+      "name": "TR45",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t45_tr",
+        "s45_tr"
+      ],
+      "subVars": {}
+    },
+    "v-TR56": {
+      "name": "TR56",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t56_tr",
+        "s56_tr"
+      ],
+      "subVars": {}
+    },
+    "v-TR67": {
+      "name": "TR67",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t67_tr",
+        "s67_tr"
+      ],
+      "subVars": {}
+    },
+    "v-TR61": {
+      "name": "TR61",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t61_tr",
+        "s61_tr"
+      ],
+      "subVars": {}
+    },
+    "v-TR78": {
+      "name": "TR78",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t78_tr",
+        "s78_tr"
+      ],
+      "subVars": {}
+    },
+    "v-TR81": {
+      "name": "TR81",
+      "parrent": "",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t81_tr",
+        "s81_tr"
+      ],
+      "subVars": {}
+    },
+    "v-T_INICIO": {
+      "name": "T_INICIO",
+      "parrent": "",
+      "type": "Timer",
+      "value": null,
+      "usedBy": [
+        "tm0_t"
+      ],
+      "subVars": {
+        "PT": "v-T_INICIO-PT",
+        "ET": "v-T_INICIO-ET",
+        "IN": "v-T_INICIO-IN",
+        "R": "v-T_INICIO-R",
+        "Q": "v-T_INICIO-Q"
+      }
+    },
+    "v-T_INICIO-PT": {
+      "name": "T_INICIO.PT",
+      "parrent": "v-T_INICIO",
+      "type": "Time",
+      "value": 2000,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_INICIO-ET": {
+      "name": "T_INICIO.ET",
+      "parrent": "v-T_INICIO",
+      "type": "Time",
+      "value": 0,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_INICIO-IN": {
+      "name": "T_INICIO.IN",
+      "parrent": "v-T_INICIO",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_INICIO-R": {
+      "name": "T_INICIO.R",
+      "parrent": "v-T_INICIO",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_INICIO-Q": {
+      "name": "T_INICIO.Q",
+      "parrent": "v-T_INICIO",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t01_q"
+      ],
+      "subVars": {}
+    },
+    "v-T_MIN_A": {
+      "name": "T_MIN_A",
+      "parrent": "",
+      "type": "Timer",
+      "value": null,
+      "usedBy": [
+        "tm1_t"
+      ],
+      "subVars": {
+        "PT": "v-T_MIN_A-PT",
+        "ET": "v-T_MIN_A-ET",
+        "IN": "v-T_MIN_A-IN",
+        "R": "v-T_MIN_A-R",
+        "Q": "v-T_MIN_A-Q"
+      }
+    },
+    "v-T_MIN_A-PT": {
+      "name": "T_MIN_A.PT",
+      "parrent": "v-T_MIN_A",
+      "type": "Time",
+      "value": 8000,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_MIN_A-ET": {
+      "name": "T_MIN_A.ET",
+      "parrent": "v-T_MIN_A",
+      "type": "Time",
+      "value": 0,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_MIN_A-IN": {
+      "name": "T_MIN_A.IN",
+      "parrent": "v-T_MIN_A",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_MIN_A-R": {
+      "name": "T_MIN_A.R",
+      "parrent": "v-T_MIN_A",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_MIN_A-Q": {
+      "name": "T_MIN_A.Q",
+      "parrent": "v-T_MIN_A",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t12_tmin"
+      ],
+      "subVars": {}
+    },
+    "v-T_MAX_A": {
+      "name": "T_MAX_A",
+      "parrent": "",
+      "type": "Timer",
+      "value": null,
+      "usedBy": [
+        "tm2_t"
+      ],
+      "subVars": {
+        "PT": "v-T_MAX_A-PT",
+        "ET": "v-T_MAX_A-ET",
+        "IN": "v-T_MAX_A-IN",
+        "R": "v-T_MAX_A-R",
+        "Q": "v-T_MAX_A-Q"
+      }
+    },
+    "v-T_MAX_A-PT": {
+      "name": "T_MAX_A.PT",
+      "parrent": "v-T_MAX_A",
+      "type": "Time",
+      "value": 16000,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_MAX_A-ET": {
+      "name": "T_MAX_A.ET",
+      "parrent": "v-T_MAX_A",
+      "type": "Time",
+      "value": 0,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_MAX_A-IN": {
+      "name": "T_MAX_A.IN",
+      "parrent": "v-T_MAX_A",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_MAX_A-R": {
+      "name": "T_MAX_A.R",
+      "parrent": "v-T_MAX_A",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_MAX_A-Q": {
+      "name": "T_MAX_A.Q",
+      "parrent": "v-T_MAX_A",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t12_tmax"
+      ],
+      "subVars": {}
+    },
+    "v-T_AMAR_A": {
+      "name": "T_AMAR_A",
+      "parrent": "",
+      "type": "Timer",
+      "value": null,
+      "usedBy": [
+        "tm3_t"
+      ],
+      "subVars": {
+        "PT": "v-T_AMAR_A-PT",
+        "ET": "v-T_AMAR_A-ET",
+        "IN": "v-T_AMAR_A-IN",
+        "R": "v-T_AMAR_A-R",
+        "Q": "v-T_AMAR_A-Q"
+      }
+    },
+    "v-T_AMAR_A-PT": {
+      "name": "T_AMAR_A.PT",
+      "parrent": "v-T_AMAR_A",
+      "type": "Time",
+      "value": 3000,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_AMAR_A-ET": {
+      "name": "T_AMAR_A.ET",
+      "parrent": "v-T_AMAR_A",
+      "type": "Time",
+      "value": 0,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_AMAR_A-IN": {
+      "name": "T_AMAR_A.IN",
+      "parrent": "v-T_AMAR_A",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_AMAR_A-R": {
+      "name": "T_AMAR_A.R",
+      "parrent": "v-T_AMAR_A",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_AMAR_A-Q": {
+      "name": "T_AMAR_A.Q",
+      "parrent": "v-T_AMAR_A",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t23_q"
+      ],
+      "subVars": {}
+    },
+    "v-T_TV_A": {
+      "name": "T_TV_A",
+      "parrent": "",
+      "type": "Timer",
+      "value": null,
+      "usedBy": [
+        "tm4_t"
+      ],
+      "subVars": {
+        "PT": "v-T_TV_A-PT",
+        "ET": "v-T_TV_A-ET",
+        "IN": "v-T_TV_A-IN",
+        "R": "v-T_TV_A-R",
+        "Q": "v-T_TV_A-Q"
+      }
+    },
+    "v-T_TV_A-PT": {
+      "name": "T_TV_A.PT",
+      "parrent": "v-T_TV_A",
+      "type": "Time",
+      "value": 1000,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_TV_A-ET": {
+      "name": "T_TV_A.ET",
+      "parrent": "v-T_TV_A",
+      "type": "Time",
+      "value": 0,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_TV_A-IN": {
+      "name": "T_TV_A.IN",
+      "parrent": "v-T_TV_A",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_TV_A-R": {
+      "name": "T_TV_A.R",
+      "parrent": "v-T_TV_A",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_TV_A-Q": {
+      "name": "T_TV_A.Q",
+      "parrent": "v-T_TV_A",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t34_q",
+        "t37_q",
+        "t31_q"
+      ],
+      "subVars": {}
+    },
+    "v-T_VERDE_B": {
+      "name": "T_VERDE_B",
+      "parrent": "",
+      "type": "Timer",
+      "value": null,
+      "usedBy": [
+        "tm5_t"
+      ],
+      "subVars": {
+        "PT": "v-T_VERDE_B-PT",
+        "ET": "v-T_VERDE_B-ET",
+        "IN": "v-T_VERDE_B-IN",
+        "R": "v-T_VERDE_B-R",
+        "Q": "v-T_VERDE_B-Q"
+      }
+    },
+    "v-T_VERDE_B-PT": {
+      "name": "T_VERDE_B.PT",
+      "parrent": "v-T_VERDE_B",
+      "type": "Time",
+      "value": 6000,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_VERDE_B-ET": {
+      "name": "T_VERDE_B.ET",
+      "parrent": "v-T_VERDE_B",
+      "type": "Time",
+      "value": 0,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_VERDE_B-IN": {
+      "name": "T_VERDE_B.IN",
+      "parrent": "v-T_VERDE_B",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_VERDE_B-R": {
+      "name": "T_VERDE_B.R",
+      "parrent": "v-T_VERDE_B",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_VERDE_B-Q": {
+      "name": "T_VERDE_B.Q",
+      "parrent": "v-T_VERDE_B",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t45_q"
+      ],
+      "subVars": {}
+    },
+    "v-T_AMAR_B": {
+      "name": "T_AMAR_B",
+      "parrent": "",
+      "type": "Timer",
+      "value": null,
+      "usedBy": [
+        "tm6_t"
+      ],
+      "subVars": {
+        "PT": "v-T_AMAR_B-PT",
+        "ET": "v-T_AMAR_B-ET",
+        "IN": "v-T_AMAR_B-IN",
+        "R": "v-T_AMAR_B-R",
+        "Q": "v-T_AMAR_B-Q"
+      }
+    },
+    "v-T_AMAR_B-PT": {
+      "name": "T_AMAR_B.PT",
+      "parrent": "v-T_AMAR_B",
+      "type": "Time",
+      "value": 3000,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_AMAR_B-ET": {
+      "name": "T_AMAR_B.ET",
+      "parrent": "v-T_AMAR_B",
+      "type": "Time",
+      "value": 0,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_AMAR_B-IN": {
+      "name": "T_AMAR_B.IN",
+      "parrent": "v-T_AMAR_B",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_AMAR_B-R": {
+      "name": "T_AMAR_B.R",
+      "parrent": "v-T_AMAR_B",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_AMAR_B-Q": {
+      "name": "T_AMAR_B.Q",
+      "parrent": "v-T_AMAR_B",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t56_q"
+      ],
+      "subVars": {}
+    },
+    "v-T_TV_B": {
+      "name": "T_TV_B",
+      "parrent": "",
+      "type": "Timer",
+      "value": null,
+      "usedBy": [
+        "tm7_t"
+      ],
+      "subVars": {
+        "PT": "v-T_TV_B-PT",
+        "ET": "v-T_TV_B-ET",
+        "IN": "v-T_TV_B-IN",
+        "R": "v-T_TV_B-R",
+        "Q": "v-T_TV_B-Q"
+      }
+    },
+    "v-T_TV_B-PT": {
+      "name": "T_TV_B.PT",
+      "parrent": "v-T_TV_B",
+      "type": "Time",
+      "value": 1000,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_TV_B-ET": {
+      "name": "T_TV_B.ET",
+      "parrent": "v-T_TV_B",
+      "type": "Time",
+      "value": 0,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_TV_B-IN": {
+      "name": "T_TV_B.IN",
+      "parrent": "v-T_TV_B",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_TV_B-R": {
+      "name": "T_TV_B.R",
+      "parrent": "v-T_TV_B",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_TV_B-Q": {
+      "name": "T_TV_B.Q",
+      "parrent": "v-T_TV_B",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t67_q",
+        "t61_q"
+      ],
+      "subVars": {}
+    },
+    "v-T_PED": {
+      "name": "T_PED",
+      "parrent": "",
+      "type": "Timer",
+      "value": null,
+      "usedBy": [
+        "tm8_t"
+      ],
+      "subVars": {
+        "PT": "v-T_PED-PT",
+        "ET": "v-T_PED-ET",
+        "IN": "v-T_PED-IN",
+        "R": "v-T_PED-R",
+        "Q": "v-T_PED-Q"
+      }
+    },
+    "v-T_PED-PT": {
+      "name": "T_PED.PT",
+      "parrent": "v-T_PED",
+      "type": "Time",
+      "value": 6000,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_PED-ET": {
+      "name": "T_PED.ET",
+      "parrent": "v-T_PED",
+      "type": "Time",
+      "value": 0,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_PED-IN": {
+      "name": "T_PED.IN",
+      "parrent": "v-T_PED",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_PED-R": {
+      "name": "T_PED.R",
+      "parrent": "v-T_PED",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_PED-Q": {
+      "name": "T_PED.Q",
+      "parrent": "v-T_PED",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t78_q"
+      ],
+      "subVars": {}
+    },
+    "v-T_PISCA_PED": {
+      "name": "T_PISCA_PED",
+      "parrent": "",
+      "type": "Timer",
+      "value": null,
+      "usedBy": [
+        "tm9_t"
+      ],
+      "subVars": {
+        "PT": "v-T_PISCA_PED-PT",
+        "ET": "v-T_PISCA_PED-ET",
+        "IN": "v-T_PISCA_PED-IN",
+        "R": "v-T_PISCA_PED-R",
+        "Q": "v-T_PISCA_PED-Q"
+      }
+    },
+    "v-T_PISCA_PED-PT": {
+      "name": "T_PISCA_PED.PT",
+      "parrent": "v-T_PISCA_PED",
+      "type": "Time",
+      "value": 4000,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_PISCA_PED-ET": {
+      "name": "T_PISCA_PED.ET",
+      "parrent": "v-T_PISCA_PED",
+      "type": "Time",
+      "value": 0,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_PISCA_PED-IN": {
+      "name": "T_PISCA_PED.IN",
+      "parrent": "v-T_PISCA_PED",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_PISCA_PED-R": {
+      "name": "T_PISCA_PED.R",
+      "parrent": "v-T_PISCA_PED",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_PISCA_PED-Q": {
+      "name": "T_PISCA_PED.Q",
+      "parrent": "v-T_PISCA_PED",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t81_q"
+      ],
+      "subVars": {}
+    },
+    "v-T_LUZ": {
+      "name": "T_LUZ",
+      "parrent": "",
+      "type": "Timer",
+      "value": null,
+      "usedBy": [
+        "p2_t"
+      ],
+      "subVars": {
+        "PT": "v-T_LUZ-PT",
+        "ET": "v-T_LUZ-ET",
+        "IN": "v-T_LUZ-IN",
+        "R": "v-T_LUZ-R",
+        "Q": "v-T_LUZ-Q"
+      }
+    },
+    "v-T_LUZ-PT": {
+      "name": "T_LUZ.PT",
+      "parrent": "v-T_LUZ",
+      "type": "Time",
+      "value": 500,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_LUZ-ET": {
+      "name": "T_LUZ.ET",
+      "parrent": "v-T_LUZ",
+      "type": "Time",
+      "value": 0,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_LUZ-IN": {
+      "name": "T_LUZ.IN",
+      "parrent": "v-T_LUZ",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_LUZ-R": {
+      "name": "T_LUZ.R",
+      "parrent": "v-T_LUZ",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_LUZ-Q": {
+      "name": "T_LUZ.Q",
+      "parrent": "v-T_LUZ",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "p4_lq"
+      ],
+      "subVars": {}
+    },
+    "v-T_APAG": {
+      "name": "T_APAG",
+      "parrent": "",
+      "type": "Timer",
+      "value": null,
+      "usedBy": [
+        "p3_t"
+      ],
+      "subVars": {
+        "PT": "v-T_APAG-PT",
+        "ET": "v-T_APAG-ET",
+        "IN": "v-T_APAG-IN",
+        "R": "v-T_APAG-R",
+        "Q": "v-T_APAG-Q"
+      }
+    },
+    "v-T_APAG-PT": {
+      "name": "T_APAG.PT",
+      "parrent": "v-T_APAG",
+      "type": "Time",
+      "value": 500,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_APAG-ET": {
+      "name": "T_APAG.ET",
+      "parrent": "v-T_APAG",
+      "type": "Time",
+      "value": 0,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_APAG-IN": {
+      "name": "T_APAG.IN",
+      "parrent": "v-T_APAG",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_APAG-R": {
+      "name": "T_APAG.R",
+      "parrent": "v-T_APAG",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-T_APAG-Q": {
+      "name": "T_APAG.Q",
+      "parrent": "v-T_APAG",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "p4_aq"
+      ],
+      "subVars": {}
+    },
+    "v-C_FILA": {
+      "name": "C_FILA",
+      "parrent": "",
+      "type": "Counter",
+      "value": null,
+      "usedBy": [
+        "f2_c"
+      ],
+      "subVars": {
+        "PV": "v-C_FILA-PV",
+        "CV": "v-C_FILA-CV",
+        "CU": "v-C_FILA-CU",
+        "CD": "v-C_FILA-CD",
+        "R": "v-C_FILA-R",
+        "LD": "v-C_FILA-LD",
+        "QU": "v-C_FILA-QU",
+        "QD": "v-C_FILA-QD"
+      }
+    },
+    "v-C_FILA-PV": {
+      "name": "C_FILA.PV",
+      "parrent": "v-C_FILA",
+      "type": "Number",
+      "value": 3,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-C_FILA-CV": {
+      "name": "C_FILA.CV",
+      "parrent": "v-C_FILA",
+      "type": "Number",
+      "value": 0,
+      "usedBy": [
+        "f3_geq"
+      ],
+      "subVars": {}
+    },
+    "v-C_FILA-CU": {
+      "name": "C_FILA.CU",
+      "parrent": "v-C_FILA",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-C_FILA-CD": {
+      "name": "C_FILA.CD",
+      "parrent": "v-C_FILA",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-C_FILA-R": {
+      "name": "C_FILA.R",
+      "parrent": "v-C_FILA",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "f1_r"
+      ],
+      "subVars": {}
+    },
+    "v-C_FILA-LD": {
+      "name": "C_FILA.LD",
+      "parrent": "v-C_FILA",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-C_FILA-QU": {
+      "name": "C_FILA.QU",
+      "parrent": "v-C_FILA",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [
+        "t12_qu"
+      ],
+      "subVars": {}
+    },
+    "v-C_FILA-QD": {
+      "name": "C_FILA.QD",
+      "parrent": "v-C_FILA",
+      "type": "Bool",
+      "value": false,
+      "usedBy": [],
+      "subVars": {}
+    },
+    "v-UM": {
+      "name": "UM",
+      "parrent": "",
+      "type": "Number",
+      "value": 1,
+      "usedBy": [
+        "f3_geq"
+      ],
+      "subVars": {}
+    }
+  }
+}
